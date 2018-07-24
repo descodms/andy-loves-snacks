@@ -1,0 +1,17 @@
+mixin storeTag(tags = {})
+  .store
+    .store__hero
+      .store__actions
+        .store__action.store__action--edit
+          a(href=`/reviews/${store._id}`)
+            != h.icon('review')
+          //- sino hay imagen dinamica, levanta una estatica por default: store.jpg
+      img(src=`/uploads/${store.photo || 'store.jpg'}`)
+      h2.title
+        //- para meter variables en pug: si es atributo de un elemento html: es con backticks `` y el ES6 curly braces ${}, si es contenido de un elemento html es con hash y curly #{}
+        a(href=`/store/${store.slug}`) #{store.name}
+    .store__details
+      //- trim to 25 words with JS
+      //- p #{store.description.split(' ').slice(0, 25).join(' ')}
+      //- hay 2 maneras de escribir JS en pug, una es #{} y la otra elementoHtml= js
+      p= store.description.split(' ').slice(0, 25).join(' ')
