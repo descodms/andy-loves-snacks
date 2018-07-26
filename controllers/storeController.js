@@ -12,6 +12,7 @@ const multerOptions = {
     if (isPhoto) {
       next(null, true);
     } else {
+      //jelou git
       next({ message: "That filetype isn't allowed!" }, false);
     }
   },
