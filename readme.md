@@ -10,6 +10,7 @@ To load sample data, run the following command in your terminal:
 npm run sample
 ```
 
+a
 If you have previously loaded in this data, you can wipe your database 100% clean with:
 
 ```bash
